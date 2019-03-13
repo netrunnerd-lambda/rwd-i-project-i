@@ -1,3 +1,251 @@
-/* Use your own code or past solution for Great Idea Web Page CSS here! */
+:root {
+  --primary: #000;
+  --secondary: #fff;
+}
 
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* set every element's box-sizing to border-box */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* i wrote the css beyond this line */
+
+a:hover, .df {
+  background-color: var(--primary, #000);
+  color: var(--secondary, #fff);
+}
+
+.df:hover, .wtb {
+  background-color: var(--secondary, #fff);
+  color: var(--primary, #000)
+}
+
+a {
+	border-radius: 3px;
+	color: var(--primary, #000);
+	text-decoration: none;
+	transition: all 0.5s;
+}
+
+.container {
+	margin: 25px auto;
+	overflow: hidden;
+	width: 876px;
+}
+
+.copyright {
+	font-size: 13px;
+	margin: 50px 0 115px;
+	text-align: center;
+}
+
+.df {
+	border: 2px solid black;
+	border-radius: 100%;
+	bottom: 0;
+	font-weight: bold;
+	margin: 5px;
+	padding: 20px;
+	position: fixed;
+	right: 0;
+}
+
+.muscle {
+	align-items: center;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.header-nav {
+	margin-bottom: 20px;
+}
+
+.header-nav a {
+	border-radius: 3px;
+	font-size: 15px;
+	margin: 0 25px;
+	padding: 4px 6px;
+}
+
+.header-nav a:first-child,
+.main-content section:first-child {
+	margin-left: 0;
+}
+
+.header-nav a:last-child,
+.header-nav a:last-child:hover {
+	background: none;
+	margin-left: 55px;
+}
+
+.header-content {
+	margin: 60px 0 80px;
+	text-align: center;
+}
+
+.header-content img {
+	min-width: 379px;
+}
+
+.header-content .get-started,
+.services-info-facts {
+	width: 75%;
+}
+
+.header-content .get-started a,
+.service, .service a {
+	border: 1px solid black;
+}
+
+.header-content .get-started a {
+	padding: 4px 50px;
+}
+
+.header-content .get-started h2 {
+	font-size: 5em;
+}
+
+.header-services,
+.middle-img {
+	margin: 40px 0 40px;
+}
+
+.header-services h1 {
+	font-size: 1.8em;
+}
+
+main {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px 0 1px;
+	padding: 40px 0 40px;
+}
+
+main, main .service {
+	margin-bottom: 40px;
+}
+
+.main-content section {
+	margin-left: 15px;
+}
+
+.middle-img {
+	min-width: 876px;
+}
+
+p {
+	line-height: 1.25em;
+}
+
+.services {
+	flex-flow: row wrap;
+}
+
+.service {
+	padding: 18px;
+	width: 418px;
+}
+
+.service:nth-child(odd) {
+	margin-right: 40px;
+}
+
+.service:nth-last-child(-n+2) {
+	margin-bottom: 0;
+}
+
+.service a {
+	border-radius: 5px;
+	display: inline-block;
+	font-size: 12px;
+	margin: 20px 0 5px;
+	padding: 10px 40px;
+}
+
+.services-info {
+	align-items: flex-start;
+}
+
+.services-info-facts {
+	padding-right: 30px;
+}
+
+.services-info-facts-list {
+	list-style-type: square;
+}
+
+.services-info-facts-list li {
+	margin: 20px 20px;
+}
+
+.services-info-img {
+	min-width: 420px;
+}
