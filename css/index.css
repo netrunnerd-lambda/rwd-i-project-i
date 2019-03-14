@@ -78,16 +78,6 @@ h1, h2, h3, h4, h5 {
 
 /* i wrote the css beyond this line */
 
-a:hover, .df {
-  background-color: var(--primary, #000);
-  color: var(--secondary, #fff);
-}
-
-.df:hover, .wtb {
-  background-color: var(--secondary, #fff);
-  color: var(--primary, #000);
-}
-
 a {
 	border-radius: 3px;
 	color: var(--primary, #000);
@@ -95,10 +85,20 @@ a {
 	transition: all 0.5s;
 }
 
+ a:hover, .df {
+  background-color: var(--primary, #000);
+  color: var(--secondary, #fff);
+}
+
+.df:hover {
+  background-color: var(--secondary, #fff);
+  color: var(--primary, #000);
+}
+
 .container {
-	margin: 25px auto;
-	overflow: hidden;
-	width: 876px;
+	justify-content: space-evenly;
+	margin: 0 auto;
+	max-width: 876px;
 }
 
 .copyright {
@@ -121,56 +121,78 @@ a {
 .muscle {
 	align-items: center;
 	display: flex;
-	justify-content: flex-start;
+	flex-flow: column;
+}
+
+/** header **/
+
+.header-nav, .header-content,
+.main-content {
+	flex-flow: row;
+	justify-content: space-between;
+}
+
+.header {
+	margin-top: 25px;
+	width: 100%;
 }
 
 .header-nav {
 	margin-bottom: 20px;
 }
 
-.header-nav a {
-	border-radius: 3px;
+.header-nav-links {
+	flex-flow: row;
+	justify-content: space-between;
+	margin-right: 100px;
+	width: 100%;
+}
+
+.header-nav-links a {
 	font-size: 15px;
-	margin: 0 25px;
 	padding: 4px 6px;
 }
 
-.header-nav a:first-child,
-.main-content section:first-child {
-	margin-left: 0;
-}
-
-.header-nav a:last-child,
-.header-nav a:last-child:hover {
+.header-nav > a,
+.header-nav > a:hover {
 	background: none;
-	margin-left: 55px;
+	max-height: 36px;
+	padding: 0;
 }
 
 .header-content {
 	margin: 60px 0 80px;
+}
+
+.header-content section {
 	text-align: center;
+	width: 75%;
+}
+
+.header-content section h1 {
+	font-size: 5em;
+}
+
+.header-content section a {
+	border: 1px solid var(--primary, #000);
+	border-radius: 0;
+	padding: 2px 45px;
 }
 
 .header-content img {
-	min-width: 379px;
+	height: 379px;
 }
+
+/* .header-nav a:first-child,
+.main-content section:first-child {
+	margin-left: 0;
+} */
+
+/*
 
 .header-content .get-started,
 .services-info-facts {
 	width: 75%;
-}
-
-.header-content .get-started a,
-.service, .service a {
-	border: 1px solid var(--primary, #000);
-}
-
-.header-content .get-started a {
-	padding: 4px 50px;
-}
-
-.header-content .get-started h2 {
-	font-size: 5em;
 }
 
 .header-services,
@@ -180,13 +202,16 @@ a {
 
 .header-services h1 {
 	font-size: 1.8em;
-}
+} */
+
+/** main-content **/
 
 main {
 	border-color: var(--primary, #000);
 	border-style: solid;
-	border-width: 1px 0 1px;
+	border-width: 2px 0 2px;
 	padding: 40px 0 40px;
+	width: 100%;
 }
 
 main, main .service {
@@ -194,18 +219,25 @@ main, main .service {
 }
 
 .main-content section {
-	margin-left: 15px;
+	width: 49%;
+}
+
+.main-content:last-child section {
+	width: 32%;
 }
 
 .middle-img {
-	min-width: 876px;
+	margin: 40px 0 40px;
+	width: 100%;
 }
 
 p {
 	line-height: 1.25em;
 }
 
-.services {
+/** services page **/
+
+/* .services {
 	flex-flow: row wrap;
 }
 
@@ -228,9 +260,15 @@ p {
 	font-size: 12px;
 	margin: 20px 0 5px;
 	padding: 10px 40px;
+} */
+
+/** footer **/
+
+.footer {
+	width: 100%;
 }
 
-.services-info {
+/* .services-info {
 	align-items: flex-start;
 }
 
@@ -248,4 +286,38 @@ p {
 
 .services-info-img {
 	min-width: 420px;
+} */
+
+@media (max-width: 800px) {
+	.container {
+		padding: 0 30px 0;
+	}
+
+	.df {
+		display: none;
+	}
+
+	/** header **/
+
+	.header-nav {
+		flex-flow: column-reverse;
+	}
+
+	.header-nav-links {
+		margin: 35px auto;
+	}
+
+	.header-content section {
+		width: 100%;
+	}
+
+	.header-content img {
+		display: none;
+	}
+
+	/** main-content **/
+
+	.main-content:last-child section {
+		width: 29%;
+	}
 }
