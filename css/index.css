@@ -186,3 +186,36 @@ p { line-height: 1.25em; }
 	margin: 50px 0 115px;
 	text-align: center;
 }
+
+/** tablet view **/
+
+@media only screen and (max-width: 800px) {
+	/** general **/
+
+	.container {
+		padding: 0 30px 0;
+	}
+
+	/** navigation **/
+
+	.navigation {
+		flex-flow: column-reverse;
+	}
+
+	.navigation-links {
+		margin-top: 40px;
+		width: 100%;
+	}
+
+	/** header **/
+
+	#snippet {
+		display: none;
+	}
+
+	/** main content **/
+
+	.text-container:last-child section {
+		width: 29%;
+	}
+}
