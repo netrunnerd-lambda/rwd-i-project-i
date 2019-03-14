@@ -62,6 +62,7 @@ table {
 /* set every element's box-sizing to border-box */
 
 * {
+	/* border: 1px solid black !important; */
 	box-sizing: border-box;
 }
 
@@ -76,154 +77,93 @@ h1, h2, h3, h4, h5 {
 	margin-bottom: 15px;
 }
 
-/* i wrote the css beyond this line */
+/** general **/
 
 a {
-	border-radius: 3px;
 	color: var(--primary, #000);
 	text-decoration: none;
-	transition: all 0.5s;
-}
-
- a:hover, .df {
-  background-color: var(--primary, #000);
-  color: var(--secondary, #fff);
-}
-
-.df:hover {
-  background-color: var(--secondary, #fff);
-  color: var(--primary, #000);
+	transition: background-color 0.5s, color 0.5s;
 }
 
 .container {
-	justify-content: space-evenly;
 	margin: 0 auto;
 	max-width: 876px;
 }
 
-.copyright {
-	font-size: 13px;
-	margin: 50px 0 115px;
-	text-align: center;
-}
-
-.df {
-	border: 2px solid var(--primary, #000);
-	border-radius: 100%;
-	bottom: 0;
-	font-weight: bold;
-	margin: 5px;
-	padding: 20px;
-	position: fixed;
-	right: 0;
-}
-
-.muscle {
+.header, .navigation, .navigation-links,
+.text-container {
 	align-items: center;
 	display: flex;
-	flex-flow: column;
-}
-
-/** header **/
-
-.header-nav, .header-content,
-.main-content {
-	flex-flow: row;
 	justify-content: space-between;
-}
-
-.header {
-	margin-top: 25px;
 	width: 100%;
 }
 
-.header-nav {
-	margin-bottom: 20px;
+p { line-height: 1.25em; }
+
+/** navigation **/
+
+.navigation {
+	margin: 20px 0 20px;
+	flex-flow: row wrap;
 }
 
-.header-nav-links {
-	flex-flow: row;
-	justify-content: space-between;
-	margin-right: 100px;
-	width: 100%;
+.navigation-links {
+	width: 70%;
 }
 
-.header-nav-links a {
+.navigation-links a {
+	border-radius: 3px;
 	font-size: 15px;
 	padding: 4px 6px;
 }
 
-.header-nav > a,
-.header-nav > a:hover {
-	background: none;
-	max-height: 36px;
-	padding: 0;
+.navigation-links a:hover {
+	background: var(--primary, #000);
+	color: var(--secondary, #fff);
+}
+
+/** header **/
+
+.header {
+	align-items: center;
+	justify-content: center;
 }
 
 .header-content {
-	margin: 60px 0 80px;
-}
-
-.header-content section {
 	text-align: center;
-	width: 75%;
+	width: 70%;
 }
 
-.header-content section h1 {
+.header-content, #snippet {
+	margin: 40px 0 50px;
+}
+
+.header-content h1 {
 	font-size: 5em;
 }
 
-.header-content section a {
+.header-content a {
 	border: 1px solid var(--primary, #000);
-	border-radius: 0;
 	padding: 2px 45px;
 }
 
-.header-content img {
+.header-content a:hover {
+	background: var(--primary, #000);
+	color: var(--secondary, #fff);
+}
+
+#snippet {
 	height: 379px;
 }
 
-/* .header-nav a:first-child,
-.main-content section:first-child {
-	margin-left: 0;
-} */
+/** main content **/
 
-/*
-
-.header-content .get-started,
-.services-info-facts {
-	width: 75%;
-}
-
-.header-services,
-.middle-img {
-	margin: 40px 0 40px;
-}
-
-.header-services h1 {
-	font-size: 1.8em;
-} */
-
-/** main-content **/
-
-main {
+.content-container main {
 	border-color: var(--primary, #000);
 	border-style: solid;
 	border-width: 2px 0 2px;
+	margin: 40px 0 40px;
 	padding: 40px 0 40px;
-	width: 100%;
-}
-
-main, main .service {
-	margin-bottom: 40px;
-}
-
-.main-content section {
-	width: 49%;
-}
-
-.main-content:last-child section {
-	width: 32%;
 }
 
 .middle-img {
@@ -231,93 +171,18 @@ main, main .service {
 	width: 100%;
 }
 
-p {
-	line-height: 1.25em;
+.text-container section {
+	width: 49%;
 }
 
-/** services page **/
-
-/* .services {
-	flex-flow: row wrap;
+.text-container:last-child section {
+	width: 32%;
 }
-
-.service {
-	padding: 18px;
-	width: 418px;
-}
-
-.service:nth-child(odd) {
-	margin-right: 40px;
-}
-
-.service:nth-last-child(-n+2) {
-	margin-bottom: 0;
-}
-
-.service a {
-	border-radius: 5px;
-	display: inline-block;
-	font-size: 12px;
-	margin: 20px 0 5px;
-	padding: 10px 40px;
-} */
 
 /** footer **/
 
-.footer {
-	width: 100%;
-}
-
-/* .services-info {
-	align-items: flex-start;
-}
-
-.services-info-facts {
-	padding-right: 30px;
-}
-
-.services-info-facts-list {
-	list-style-type: square;
-}
-
-.services-info-facts-list li {
-	margin: 20px 20px;
-}
-
-.services-info-img {
-	min-width: 420px;
-} */
-
-@media (max-width: 800px) {
-	.container {
-		padding: 0 30px 0;
-	}
-
-	.df {
-		display: none;
-	}
-
-	/** header **/
-
-	.header-nav {
-		flex-flow: column-reverse;
-	}
-
-	.header-nav-links {
-		margin: 35px auto;
-	}
-
-	.header-content section {
-		width: 100%;
-	}
-
-	.header-content img {
-		display: none;
-	}
-
-	/** main-content **/
-
-	.main-content:last-child section {
-		width: 29%;
-	}
+.footer .copyright {
+	font-size: 13px;
+	margin: 50px 0 115px;
+	text-align: center;
 }
