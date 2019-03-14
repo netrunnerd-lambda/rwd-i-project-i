@@ -62,18 +62,18 @@ table {
 /* set every element's box-sizing to border-box */
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
-    font-family: 'Titillium Web', sans-serif;
+	font-family: 'Titillium Web', sans-serif;
+	height: 100%;
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Bangers', cursive;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
+	font-family: 'Bangers', cursive;
+	letter-spacing: 1px;
+	margin-bottom: 15px;
 }
 
 /* i wrote the css beyond this line */
@@ -85,7 +85,7 @@ a:hover, .df {
 
 .df:hover, .wtb {
   background-color: var(--secondary, #fff);
-  color: var(--primary, #000)
+  color: var(--primary, #000);
 }
 
 a {
@@ -108,7 +108,7 @@ a {
 }
 
 .df {
-	border: 2px solid black;
+	border: 2px solid var(--primary, #000);
 	border-radius: 100%;
 	bottom: 0;
 	font-weight: bold;
@@ -162,7 +162,7 @@ a {
 
 .header-content .get-started a,
 .service, .service a {
-	border: 1px solid black;
+	border: 1px solid var(--primary, #000);
 }
 
 .header-content .get-started a {
@@ -183,7 +183,7 @@ a {
 }
 
 main {
-	border-color: black;
+	border-color: var(--primary, #000);
 	border-style: solid;
 	border-width: 1px 0 1px;
 	padding: 40px 0 40px;
