@@ -1,3 +1,293 @@
-/* Use your own code or past solution for Great Idea Web Page CSS here! */
+:root {
+  --primary: #000;
+  --secondary: #fff;
+}
 
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* set every element's box-sizing to border-box */
+
+* {
+	/* border: 1px solid black !important; */
+	box-sizing: border-box;
+}
+
+html, body {
+	font-family: 'Titillium Web', sans-serif;
+	height: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Bangers', cursive;
+	letter-spacing: 1px;
+	margin-bottom: 15px;
+}
+
+/** general **/
+
+a {
+	color: var(--primary, #000);
+	text-decoration: none;
+	transition: background-color 0.5s, color 0.5s;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 876px;
+}
+
+.header, .navigation, .navigation-links,
+.text-container {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+p { line-height: 1.25em; }
+
+/** navigation **/
+
+.navigation {
+	margin: 20px 0 20px;
+	flex-flow: row wrap;
+}
+
+.navigation-links {
+	width: 70%;
+}
+
+.navigation-links a {
+	border-radius: 3px;
+	font-size: 15px;
+	padding: 4px 6px;
+}
+
+.navigation-links a:hover {
+	background: var(--primary, #000);
+	color: var(--secondary, #fff);
+}
+
+/** header **/
+
+.header {
+	align-items: center;
+	justify-content: center;
+}
+
+.header-content {
+	text-align: center;
+	width: 70%;
+}
+
+.header-content, #snippet {
+	margin: 40px 0 50px;
+}
+
+.header-content h1 {
+	font-size: 5em;
+}
+
+.header-content a {
+	border: 1px solid var(--primary, #000);
+	padding: 2px 45px;
+}
+
+.header-content a:hover {
+	background: var(--primary, #000);
+	color: var(--secondary, #fff);
+}
+
+#snippet {
+	height: 379px;
+}
+
+/** main content **/
+
+.content-container main {
+	border-color: var(--primary, #000);
+	border-style: solid;
+	border-width: 2px 0 2px;
+	margin: 40px 0 40px;
+	padding: 40px 0 40px;
+}
+
+.middle-img {
+	margin: 40px 0 40px;
+	width: 100%;
+}
+
+.text-container section {
+	width: 49%;
+}
+
+.text-container:last-child section {
+	width: 32%;
+}
+
+/** footer **/
+
+.footer .copyright {
+	font-size: 13px;
+	margin: 50px 0 115px;
+	text-align: center;
+}
+
+/** tablet view **/
+
+@media only screen and (max-width: 800px) {
+	/** general **/
+
+	.container {
+		padding: 0 30px 0;
+	}
+
+	/** navigation **/
+
+	.navigation {
+		flex-flow: column-reverse;
+	}
+
+	.navigation-links {
+		margin-top: 40px;
+		width: 100%;
+	}
+
+	/** header **/
+
+	#snippet {
+		display: none;
+	}
+
+	/** main content **/
+
+	.text-container:last-child section {
+		width: 29%;
+	}
+}
+
+/** mobile view **/
+
+@media only screen and (max-width: 500px) {
+	/** general **/
+
+	.container {
+		padding: 0;
+	}
+
+	.content-container {
+		padding: 0 20px 0;
+	}
+
+	/** navigation **/
+
+	.navigation {
+		margin-top: 5px;
+	}
+
+	.navigation > a {
+		border-bottom: 1px solid var(--primary, #000);
+		padding: 20px;
+		text-align: center;
+		width: 100%;
+	}
+	
+	.navigation-links {
+		flex-flow: column;
+		margin-top: 0;
+	}
+
+	.navigation-links a {
+		border-bottom: 1px solid var(--primary, #000);
+		border-radius: 0;
+		font-size: 1.5em;
+		padding: 20px;
+		text-align: center;
+		width: 100%;
+	}
+
+	/** header **/
+	
+	.header-content h1 {
+		font-size: 4em;
+	}
+
+	/** main content **/
+
+	.text-container { 
+		flex-flow: column;
+	}
+
+	.text-container section,
+	.text-container:last-child section {
+		margin-bottom: 60px;
+		width: 100%;
+	}
+
+	.text-container section:last-child,
+	.text-container:last-child section:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@media only screen and (max-width: 420px) {
+	/** header **/
+
+	.header-content h1 {
+		font-size: 3em;
+	}
+}
